@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Database</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <table>
+        <h3>Client Database</h3>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>Full Name*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                        <input type="text" name="fullName" id="fullName">
+                    </div>
+                    <div>
+                        <label>Phone Number*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                        <input type="text" name="phoneNumber" id="phoneNumber">
+                    </div>
+                    <div>
+                        <label>Loan Amount(GHC)</label>
+                        <input type="text" name="loanAmount" id="loanAmount">
+                    </div>
+                    <div>
+                        <label>Loan Date</label>
+                        <input type="date" name="loanDate" id="loanDate" placeholder="DD-MM-YYYY" value=""
+                        min="01 January, 1997" max="31 December, 2050">
+                    </div>
+                    <div>
+                        <label>Repayment Amount(GHC)</label>
+                        <input type="text" name="repaymentAmount" id="repaymentAmount">
+                    </div>
+                    <div>
+                        <label>Repayment Date</label>
+                        <input type="date" name="repaymentDate" id="repaymentDate" placeholder="DD-MM-YYYY" value=""
+                          min="01 January, 1997" max="31 December, 2050"> 
+                    </div>
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="clientList">
+                    
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Phone Number</th>
+                            <th>Loan Amount(GHC)</th>
+                            <th>Loan Date</th>
+                            <th>Repayment Amount(GHC)</th>
+                            <th>Repayment Date</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+           
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>   
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+
+    <script src="script.js">
+        //--------------- Your web app's Firebase configuration-----------//
+            var firebaseConfig = {
+               apiKey: "AIzaSyCaqy2mQ56wKNj8pLTM2e_6vk96bHYhOYY",
+               authDomain: "client-database-733c1.firebaseapp.com",
+               projectId: "client-database-733c1",
+               storageBucket: "client-database-733c1.appspot.com",
+               messagingSenderId: "467699344872",
+               appId: "1:467699344872:web:012214ffd5d7deecae305d"
+          };
+
+            firebase.initializeApp(firebaseConfig);
+
+        //-------------Ready Data---------------------------------//
+        var nameV, phoneV, loanV, dateV, repayV, repayDateV
+
+         function ready(){
+             nameV = document.getElementById("fullName").value;
+             phoneV = document.getElementById("phoneNumber").value;
+             loanV = document.getElementById("loanAmount").value;
+             dateV = document.getElementById("loanDate").value;
+             repayV = document.getElementById("repaymentAmount").value;
+             repayDateV = document.getElementById("repaymentDate").value;
+             
+         }
+    </script>
+</body>
+
+</html>
