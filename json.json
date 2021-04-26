@@ -1,0 +1,28 @@
+[{
+   "fullName": "Lydia Asare",
+   "phoneNumber": "0244567852",
+   "loanAmount": "GHC1000.00",
+   "loanDate": "2020-11-24",
+   "repaymentAmount": "GHC150.00",
+   "repaymentDate": "2020-12-5"
+
+},
+
+{
+    "fullName": "Kwame Bediako",
+    "phoneNumber": "0546875123",
+    "loanAmount": "GHC2000.00",
+    "loanDate": "2020-10-02",
+    "repaymentAmount": "GHC200.00",
+    "repaymentDate": "2020-10-15"
+},
+
+{
+    "fullName": "Juliana Amoako",
+    "phoneNumber": "0205556871",
+    "loanAmount": "GHC3000.00",
+    "loanDate": "2020-08-15",
+    "repaymentAmount": "GHC250.00",
+    "repaymentDate": "2020-08-28"
+}
+]
